@@ -1,0 +1,195 @@
+/* Base styles (already your code, just tweaked a little) */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 20%;
+  margin: 13% auto; /* centers horizont2lly */
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+  justify-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: block;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%; /* flexible width */
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease, box-shadow 0.3s;
+}
+
+button:hover {
+  background-color: white;
+  cursor: pointer;
+  color: green;
+  box-shadow: 0.5px 0.5px green;
+  border: 2px solid green;
+}
+
+.button-container {
+  margin-top: 10px;
+ 
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap; /* wrap buttons on small screens */
+}
+
+/* ✅ Mobile responsive adjustments */
+@media (max-width: 768px) {
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  min-height: 100vh; /* full screen height */
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+}
+  .container {
+  margin: 20px auto; /* auto centers horizontally */
+  max-width: 60%;
+  padding: 15px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+}
+
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  .button-container {
+    display:flex;
+    flex-direction: row;
+    gap: 8px;
+
+  }
+
+  button {
+    width: 100%; /* full width button on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+/* Hide the default checkbox */
+input[type="checkbox"] {
+  appearance: none;   /* for modern browsers */
+  -webkit-appearance: none; /* for Safari */
+  -moz-appearance: none;    /* for Firefox */
+  
+  width: 18px;
+  height: 18px;
+  border: 2px solid #555;
+  border-radius: 4px;   /* rounded corners */
+  cursor: pointer;
+  position: relative;
+  margin-right: 8px;
+}
+
+/* Checked state */
+input[type="checkbox"]:checked {
+  background-color: #4caf50; /* green background */
+  border-color: #4caf50;
+}
+
+/* Add a tick mark (✔) */
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  left: 2px;
+  top: -2px;
+}
+li {
+  display: flex;
+  align-items: center;  /* aligns checkbox and text vertically */
+  margin: 5px 0;
+}
+
+li input[type="checkbox"] {
+  margin-right: 8px;   /* space between checkbox and text */
+}
+/* Style for Select All container */
+#taskList > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style the "Select All" checkbox same as tasks */
+#selectAll {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 18px;
+  height: 18px;
+  border: 2px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  margin-right: 8px;
+}
+
+/* Checked state */
+#selectAll:checked {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+/* Tick mark (✔) */
+#selectAll:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  left: 2px;
+  top: -2px;
+}
